@@ -135,7 +135,8 @@ function SDNS_ARIA_update($vars) {
 					->update(
 						[
 							'client_id' => $vars['userid'],
-							'server_id' => $server_id,
+							#Server id is no more present in table
+							#	'server_id' => $server_id,
 							'last_update' => $time,
 						]
 				);
@@ -158,7 +159,7 @@ function SDNS_ARIA_update($vars) {
 							Capsule::table('mod_solutedns_reverse')->insert(
 								[
 									'client_id' => $vars['userid'],
-									'server_id' => $server_id,
+									#'server_id' => $server_id,
 									'record_id' => $result['id'],
 									'ip' => $ip,
 									'hostname' => $result['content'],
